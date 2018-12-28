@@ -27,18 +27,16 @@ android {
     useLibrary 'org.apache.http.legacy'
 }
 
-configurations.all {
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        def requested = details.requested
-        if (requested.group == 'com.android.support' && requested.name != 'multidex') {
-            details.useVersion "${rootProject.ext.supportLibVersion}"
-        }
-    }
-}
+//configurations.all {
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested
+//        if (requested.group == 'com.android.support' && requested.name != 'multidex') {
+//            details.useVersion "${rootProject.ext.supportLibVersion}"
+//        }
+//    }
+//}
 
 dependencies {
     compile files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
-
     compile 'junit:junit:4.12'
-    compile 'com.android.support:multidex:1.0.3'
 }
